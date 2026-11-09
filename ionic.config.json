@@ -1,0 +1,7 @@
+{
+  "name": "PillPal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
