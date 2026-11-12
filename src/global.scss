@@ -35,3 +35,103 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+:root {
+  /* I-set ang Poppins bilang default font ng buong app */
+  --ion-font-family: 'Poppins', sans-serif;
+  
+  /* Yung mga colors natin kanina */
+  --ion-text-color: #49352D;
+  --ion-background-color: #FFF3E5;
+}
+
+/* --- POPPINS FONT --- */
+/* --- POPPINS FONT --- */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+/* Global Modal Styling */
+ion-modal {
+  --box-shadow: none; 
+  --background: transparent;
+}
+
+ion-modal::part(content) {
+  --border-radius: 24px 24px 0 0;
+  --background: #FFF3E5;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 24px 24px 0 0;
+  overflow: hidden;
+}
+
+ion-modal::part(backdrop) {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* ACTION SHEET STYLING */
+ion-action-sheet {
+  --background: #FFF3E5 !important;
+  --color: #49352D !important;
+  --backdrop-opacity: 0.4; 
+}
+
+ion-action-sheet .action-sheet-group {
+  background: #FFF3E5 !important;
+  border-radius: 16px 16px 0 0;
+}
+
+ion-action-sheet .action-sheet-button {
+  color: #49352D !important;
+  font-weight: 500;
+  background: #FFF3E5 !important; 
+  --background: #FFF3E5 !important;
+  --background-hover: #FFF3E5 !important;
+  --background-activated: #FFF3E5 !important;
+  border-bottom: none !important; 
+}
+
+ion-action-sheet .action-sheet-cancel {
+  background: #FFF3E5 !important;
+  color: #C94C3A !important; 
+  font-weight: 700;
+  border-top: 1px solid rgba(73, 53, 45, 0.1) !important;
+}
+
+/* --- ITO ANG PARA SA AUTO-HEIGHT MODAL --- */
+.auto-height-modal {
+  --height: auto;
+  --min-height: 0;
+  align-items: flex-end;
+  
+  &::part(content) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    max-height: 85vh; 
+  }
+}
+
+.auto-height-modal .ion-page {
+  position: relative;
+  display: block;
+  contain: content;
+}

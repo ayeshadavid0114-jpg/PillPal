@@ -1,0 +1,118 @@
+ion-content {
+  --background: #FFF3E5 !important;
+  --padding-bottom: 0; 
+}
+
+.details-wrap {
+  padding: 16px 20px 24px 20px;
+}
+
+.header-info {
+  text-align: center;
+  margin-bottom: 24px;
+
+  .med-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #49352D;
+    margin: 0 0 4px 0;
+  }
+
+  .med-dose {
+    font-size: 16px;
+    color: #C94C3A;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(73, 53, 45, 0.1);
+
+  .label {
+    font-weight: 600;
+    color: #49352D;
+    opacity: 0.8;
+  }
+
+  .value {
+    color: #49352D;
+    font-weight: 500;
+  }
+}
+
+/* --- ACTION ROW LAYOUT --- */
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.btn-taken {
+  flex: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: #47734D;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  ion-icon {
+    font-size: 20px;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &.taken-disabled {
+    background: #A0B5A2;
+    cursor: not-allowed;
+  }
+}
+
+.btn-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  ion-icon {
+    font-size: 22px;
+  }
+
+  &.edit-icon {
+    background: #EFAE43; 
+    color: #FFFFFF;
+    
+    &:active {
+      background: #d69b3b;
+    }
+  }
+
+  &.delete-icon {
+    background: #C94C3A; 
+    color: #FFFFFF;
+    
+    &:active {
+      background: #b03e2e;
+    }
+  }
+}

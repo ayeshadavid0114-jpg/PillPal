@@ -1,0 +1,89 @@
+ion-content {
+  --background: #FFF3E5; /* Cream Background */
+}
+
+.center-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 24px;
+}
+
+.logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #FFF3E5; /* Cream Background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(201, 76, 58, 0.25); /* Red shadow */
+
+  .pill {
+    font-size: 60px;
+  }
+}
+
+.app-name {
+  font-size: 36px;
+  font-weight: 700;
+  color: #49352D !important; /* Dark Brown */
+  margin: 0 0 8px 0;
+  letter-spacing: 1.5px;
+}
+
+.tagline {
+  font-size: 15px;
+  color: #49352D !important; /* Dark Brown */
+  opacity: 0.8;
+  font-weight: 500;
+  margin: 0 0 40px 0;
+}
+
+/* Loader Section */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(201, 76, 58, 0.2); /* Faded Tomato Red */
+  border-top: 3px solid #C94C3A; /* Tomato Red */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 12px;
+}
+
+.loading-text {
+  font-size: 13px;
+  color: #49352D;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

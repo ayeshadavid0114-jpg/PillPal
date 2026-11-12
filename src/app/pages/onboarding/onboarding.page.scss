@@ -1,0 +1,92 @@
+ion-content {
+  --background: #FFF3E5 !important; /* Cream Background */
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.icon-badge {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #EFAE43; /* Warm Orange */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(239, 174, 67, 0.3); /* Orange shadow */
+
+  ion-icon {
+    font-size: 36px;
+    color: #ffffff; /* White icon inside orange badge */
+  }
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #49352D !important; /* Dark Brown */
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #49352D !important;
+  opacity: 0.7; /* Slightly lighter brown */
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+.input-wrap {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid rgba(73, 53, 45, 0.1);
+  padding: 6px 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(73, 53, 45, 0.05);
+
+  /* Center the input text and placeholder */
+  ion-input {
+    --color: #49352D !important;
+    --placeholder-color: rgba(73, 53, 45, 0.4);
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center; /* Forces center alignment */
+    
+    /* Ionic 9 shadow DOM fix to center the actual native input */
+    &::part(native) {
+      text-align: center;
+    }
+  }
+}
+
+.continue-btn {
+  width: 100%;
+  --background: #C94C3A; /* Tomato Red */
+  --background-hover: #b14433;
+  --border-radius: 16px;
+  --box-shadow: 0 8px 24px rgba(201, 76, 58, 0.3); /* Red shadow */
+  height: 56px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.footnote {
+  font-size: 13px;
+  color: #49352D !important;
+  opacity: 0.6;
+  text-align: center;
+  margin: 0;
+}

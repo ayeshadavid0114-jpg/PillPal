@@ -1,0 +1,164 @@
+ion-content {
+  --background: #FFF3E5 !important; /* Cream */
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px 8px 20px;
+  
+  .brand-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #C94C3A; /* Tomato Red */
+    margin: 0;
+  }
+}
+
+.avatar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #EFAE43;
+    border: 3px solid #EFAE43;
+    box-shadow: 0 8px 24px rgba(239, 174, 67, 0.15);
+    margin-bottom: 12px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    ion-icon {
+      font-size: 48px;
+    }
+  }
+}
+
+/* Name and Edit Icon Row */
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  .user-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #49352D;
+    margin: 0;
+  }
+
+  /* FORCE THE BLACK ICON */
+  .edit-icon-btn {
+    margin: 0;
+    height: 32px;
+    --padding-start: 4px;
+    --padding-end: 4px;
+    --color: #49352D !important; /* Forces the button color */
+    --color-activated: #49352D !important; 
+    
+    ion-icon {
+      font-size: 22px;
+      color: #49352D !important; /* Forces the icon color */
+       filter: drop-shadow(0px 0px 0.5px #49352D) 
+              drop-shadow(0px 0px 0.5px #49352D);
+    }
+  }
+}
+
+/* Compact Edit Mode */
+.edit-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  width: 90%;
+  max-width: 320px;
+
+  .input-wrap {
+    flex: 1;
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E5EAEA;
+    padding: 4px 12px;
+
+    ion-input {
+      --color: #49352D;
+      --padding-start: 0;
+      --padding-end: 0;
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+
+  .action-btns {
+    display: flex;
+    gap: 4px;
+
+    .icon-btn {
+      margin: 0;
+      height: 40px;
+      --padding-start: 4px;
+      --padding-end: 4px;
+      
+      ion-icon {
+        font-size: 28px; 
+        color: inherit !important; /* Ensures the check/X icons are visible */
+      }
+    }
+  }
+}
+
+.section {
+  padding: 8px 20px 16px 20px;
+}
+
+.section-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #49352D;
+  opacity: 0.7;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Settings List */
+.settings-list {
+  background: transparent;
+  
+  ion-item {
+    --background: #FFFFFF;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    box-shadow: 0 4px 12px rgba(73, 53, 45, 0.05);
+
+    ion-label {
+      font-weight: 500;
+      color: #49352D;
+    }
+  }
+
+  .danger-item {
+    ion-label, ion-icon {
+      color: #C94C3A !important;
+    }
+  }
+}

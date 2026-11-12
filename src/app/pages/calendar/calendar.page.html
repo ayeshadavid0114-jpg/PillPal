@@ -1,0 +1,50 @@
+<ion-content class="ion-padding-top">
+  
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <h1 class="brand-title">Calendar</h1>
+  </div>
+
+  <!-- Content Section -->
+  <div class="section">
+    <ion-datetime
+      presentation="date"
+      [highlightedDates]="highlightedDates"
+      [value]="selectedDateStr"
+      (ionChange)="onDateChange($event)">
+    </ion-datetime>
+
+    <h3 class="date-title">{{ selectedDateStr | date:'fullDate' }}</h3>
+
+    @if (dayLogs.length > 0) {
+      <div class="medications-container">
+        @for (log of dayLogs; track log.id) {
+          <div class="med-card">
+            <div class="med-icon">
+              <ion-icon
+                [name]="log.takenAt ? 'checkmark-circle' : 'alert-circle'"
+                [color]="log.takenAt ? 'success' : 'danger'"
+                size="large">
+              </ion-icon>
+            </div>
+            
+            <div class="med-details">
+              <h2>{{ log.medicationName }}</h2>
+              <p>{{ log.dose }} · {{ log.scheduledTime }}</p>
+              @if (log.takenAt) {
+                <p class="taken-text">Taken at {{ log.takenAt | date:'shortTime' }}</p>
+              } @else {
+                <p class="missed-text">Missed / not taken</p>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="empty">
+        <ion-icon name="calendar-outline" size="large"></ion-icon>
+        <p>No logs for this day.</p>
+      </div>
+    }
+  </div>
+</ion-content>

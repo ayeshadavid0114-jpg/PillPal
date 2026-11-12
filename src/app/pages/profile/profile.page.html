@@ -1,0 +1,66 @@
+<ion-content class="ion-padding-top">
+  
+  <!-- Top Title -->
+  <div class="top-bar">
+    <h1 class="brand-title">Profile</h1>
+  </div>
+
+  <!-- Avatar Section -->
+  <div class="avatar-wrap">
+    <div class="avatar">
+      @if (profile.avatar) {
+        <img [src]="profile.avatar" alt="User Avatar" />
+      } @else {
+        <ion-icon name="person" size="large"></ion-icon>
+      }
+    </div>
+
+    <!-- VIEW MODE -->
+    @if (!isEditing) {
+      <div class="name-row">
+        <h2 class="user-name">{{ profile.name || 'Friend' }}</h2>
+        <ion-button fill="clear" class="edit-icon-btn" (click)="toggleEdit()">
+          <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </div>
+    }
+
+    <!-- EDIT MODE -->
+    @if (isEditing) {
+      <div class="edit-row">
+        <div class="input-wrap">
+          <ion-input [(ngModel)]="profile.name" placeholder="Enter name" maxlength="30"></ion-input>
+        </div>
+        <div class="action-btns">
+          <ion-button fill="clear" color="danger" class="icon-btn" (click)="cancelEdit()">
+            <ion-icon name="close-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear" color="success" class="icon-btn" (click)="save()">
+            <ion-icon name="checkmark-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <hr style="border-top: 1px solid #E5EAEA; margin: 24px 20px;" />
+
+  <!-- SETTINGS SECTION -->
+  <div class="section">
+    <h3 class="section-title">Settings</h3>
+    
+    <ion-list lines="none" class="settings-list">
+      <ion-item>
+        <ion-icon name="notifications-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>Notifications</ion-label>
+        <ion-toggle slot="end" [checked]="notificationsEnabled" (ionChange)="toggleNotifications($event)"></ion-toggle>
+      </ion-item>
+
+      <ion-item button (click)="resetAll()" class="danger-item">
+        <ion-icon name="trash-outline" slot="start" color="danger"></ion-icon>
+        <ion-label color="danger">Reset all data</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

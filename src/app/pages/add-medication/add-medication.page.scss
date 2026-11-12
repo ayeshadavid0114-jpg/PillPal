@@ -1,0 +1,78 @@
+/* 1. PAGE BACKGROUND */
+ion-content {
+  --background: #FFF3E5 !important; 
+}
+
+/* 2. HEADER */
+ion-header {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: transparent !important;
+}
+
+ion-toolbar {
+  --background: transparent !important;
+  --border-width: 0 !important;
+}
+
+/* 3. FORM WRAPPER */
+.form-wrapper {
+  padding: 16px 16px 0 16px; 
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* 4. INPUT CARDS */
+ion-item {
+  --background: #FFFFFF;
+  --border-radius: 12px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(73, 53, 45, 0.04);
+
+  ion-label {
+    color: #49352D !important;
+    font-weight: 600;
+    opacity: 0.9;
+    font-size: 13px;
+  }
+
+  ion-input {
+    --color: #49352D !important;
+    --placeholder-color: #999 !important;
+    font-size: 15px;
+  }
+
+  /* DROPDOWN FIX */
+  ion-select {
+    --color: #49352D !important; 
+    color: #49352D !important;
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+    
+    &::part(text) {
+      color: #49352D !important;
+      opacity: 1 !important;
+    }
+    &::part(icon) {
+      color: #C94C3A; 
+    }
+  }
+}
+
+/* 5. BUTTON CONTAINER */
+.button-container {
+  padding: 16px 16px 24px 16px; 
+}
+
+ion-button {
+  --background: #47734D; 
+  --border-radius: 16px;
+  --box-shadow: 0 6px 16px rgba(71, 115, 77, 0.3);
+  font-weight: 600;
+  height: 56px;
+  margin: 0;
+}

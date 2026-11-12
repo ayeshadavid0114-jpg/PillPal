@@ -35,6 +35,8 @@ module.exports = defineConfig([
           suffixes: ['Page', 'Component'],
         },
       ],
+      '@typescript-eslint/consistent-type-imports': 'off',
+      '@typescript-eslint/explicit-function-return-type': 'off',
     },
   },
   {

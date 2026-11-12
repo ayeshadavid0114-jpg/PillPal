@@ -1,2 +1,30 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+:root {
+  /* Tomato Red - Primary actions */
+  --ion-color-primary: #C94C3A;
+  --ion-color-primary-rgb: 201, 76, 58;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #b14433;
+  --ion-color-primary-tint: #ce5e4e;
+
+  /* Basil Green - Success/Secondary */
+  --ion-color-success: #47734D;
+  --ion-color-success-rgb: 71, 115, 77;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-shade: #3e6544;
+  --ion-color-success-tint: #59815f;
+
+  /* Warm Orange - Warning/Accents */
+  --ion-color-warning: #EFAE43;
+  --ion-color-warning-rgb: 239, 174, 67;
+  --ion-color-warning-contrast: #49352D;
+  --ion-color-warning-shade: #d2993b;
+  --ion-color-warning-tint: #f1b656;
+
+  /* Cream Background & Dark Brown Text */
+  --ion-background-color: #FFF3E5;
+  --ion-text-color: #49352D;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}

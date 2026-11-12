@@ -1,0 +1,62 @@
+<!-- TINANGGAL ANG class="ion-padding" DITO -->
+<ion-content>
+  <div class="details-wrap">
+    
+    <!-- Header Info -->
+    <div class="header-info">
+      <h2 class="med-name">{{ medication.name }}</h2>
+      <p class="med-dose">{{ medication.dose }} mg</p>
+    </div>
+
+    <!-- Info Rows -->
+    <div class="info-row">
+      <span class="label">Time:</span>
+      <span class="value">{{ medication.time }}</span>
+    </div>
+    
+    <div class="info-row">
+      <span class="label">Frequency:</span>
+      <span class="value">
+        {{ medication.frequency === 2 ? 'Twice a day' : medication.frequency === 3 ? 'Thrice a day' : 'Once a day' }}
+      </span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">Pills Left:</span>
+      <span class="value">{{ medication.pillsLeft ?? 'Not tracked' }}</span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">Dates:</span>
+      <span class="value">{{ medication.startDate }} to {{ medication.endDate || 'Ongoing' }}</span>
+    </div>
+
+    <!-- ACTION BUTTONS (ROW LAYOUT) -->
+    <div class="action-row">
+      
+      <!-- MARK AS TAKEN BUTTON (Wide) -->
+      @if (!log.takenAt) {
+        <button class="btn-taken" (click)="markTaken()">
+          <ion-icon name="heart-outline"></ion-icon>
+          Mark as Taken
+        </button>
+      } @else {
+        <button class="btn-taken taken-disabled" disabled>
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+          Taken
+        </button>
+      }
+
+      <!-- EDIT BUTTON (Icon Only) -->
+      <button class="btn-icon edit-icon" (click)="editMedication()">
+        <ion-icon name="create-outline"></ion-icon>
+      </button>
+
+      <!-- DELETE BUTTON (Icon Only) -->
+      <button class="btn-icon delete-icon" (click)="deleteMedication()">
+        <ion-icon name="trash-outline"></ion-icon>
+      </button>
+
+    </div>
+  </div>
+</ion-content>

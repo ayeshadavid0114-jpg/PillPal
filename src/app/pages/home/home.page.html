@@ -1,0 +1,90 @@
+<ion-content class="ion-padding-top">
+  
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <h1 class="brand-title">PillPal</h1>
+    <ion-button fill="clear" (click)="goProfile()">
+      <ion-icon name="person-circle-outline" size="large" color="dark"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- Greeting Section -->
+  <div class="section">
+    <h1 class="greeting">{{ greetingText }}</h1>
+    <p class="date-text">{{ formatDate(selectedDateStr) }}</p>
+  </div>
+
+  <!-- 7-Day Calendar Strip -->
+  <div class="week-strip">
+    @for (day of weekDays; track day.dateStr) {
+      <button
+        type="button"
+        class="day-cell"
+        [class.selected]="day.dateStr === selectedDateStr"
+        [class.today]="day.isToday"
+        (click)="selectDay(day)">
+        <span class="label">{{ day.label }}</span>
+        <span class="num">{{ day.num }}</span>
+        @if (day.hasLogs) {
+          <div class="dot"></div>
+        }
+      </button>
+    }
+  </div>
+
+  <!-- Reminders Summary -->
+  <div class="section">
+    <h3 class="section-label">
+      <ion-icon name="notifications-outline"></ion-icon> Reminders
+    </h3>
+    <div class="reminder-card" [class.no-reminders]="logs.length === 0">
+      @if (logs.length === 0) {
+        <strong>No reminders for this date</strong>
+      } @else if (remainingCount > 0) {
+        <strong>{{ remainingCount }} dose{{ remainingCount > 1 ? 's' : '' }} remaining</strong>
+      } @else {
+        <strong>All doses taken</strong>
+      }
+    </div>
+  </div>
+
+  <!-- Medications List -->
+  <div class="section">
+    <h3 class="section-label">MEDICATIONS</h3>
+
+    @if (logs.length > 0) {
+      <div class="medications-container">
+        @for (log of logs; track log.id) {
+          
+          <!-- PALITAN ANG DIV NG BUTTON PARA MAWALA ANG ESLINT WARNING -->
+          <button type="button" class="med-card" (click)="openMedicationDetails(log)">
+            <div class="med-icon">
+              <ion-icon
+                [name]="log.takenAt ? 'checkmark-circle' : 'time-outline'"
+                [color]="log.takenAt ? 'success' : 'warning'"
+                size="large">
+              </ion-icon>
+            </div>
+            
+            <div class="med-details">
+              <h2>{{ log.medicationName }}</h2>
+              <p>{{ log.dose }}mg · {{ log.scheduledTime }}</p>
+              @if (log.takenAt) {
+                <p class="taken-text">Taken at {{ formatTime(log.takenAt) }}</p>
+              }
+            </div>
+            
+            <ion-icon name="chevron-forward-outline" color="medium" class="arrow-icon"></ion-icon>
+          </button>
+
+        }
+      </div>
+    } @else {
+      <div class="empty">
+        <ion-icon name="medkit-outline" size="large"></ion-icon>
+        <p>No medication.</p>
+        <p class="hint">Tap ＋ to add one.</p>
+      </div>
+    }
+  </div>
+</ion-content>

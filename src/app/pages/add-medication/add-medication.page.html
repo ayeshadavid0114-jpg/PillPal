@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: transparent;">
+    <ion-title style="color: #C94C3A; text-align: center; font-weight: 700;">
+      {{ isEditMode ? 'Edit Medication' : 'Add Medication' }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="form-wrapper">
+    <ion-item>
+      <ion-label position="stacked">Medication Name</ion-label>
+      <ion-input [(ngModel)]="name" placeholder="e.g. Vitamin D"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Dose (e.g., 500)</ion-label>
+      <ion-input type="number" inputmode="numeric" min="1" [(ngModel)]="dose" placeholder="Enter dose"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Reminder Time</ion-label>
+      <ion-input type="time" [(ngModel)]="time"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Frequency (Times per day)</ion-label>
+      <ion-select [(ngModel)]="frequency" interface="popover">
+        <ion-select-option [value]="1">Once a day</ion-select-option>
+        <ion-select-option [value]="2">Twice a day (Every 12 hours)</ion-select-option>
+        <ion-select-option [value]="3">Thrice a day (Every 8 hours)</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Start Date</ion-label>
+      <ion-input type="date" [(ngModel)]="startDate"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">End Date (Optional)</ion-label>
+      <ion-input type="date" [(ngModel)]="endDate"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Pills Left (Optional)</ion-label>
+      <ion-input type="number" inputmode="numeric" min="0" [(ngModel)]="pillsLeft" placeholder="e.g. 30"></ion-input>
+    </ion-item>
+  </div>
+
+  <div class="button-container">
+    <ion-button expand="block" color="success" (click)="save()">
+      <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+      {{ isEditMode ? 'Update Medication' : 'Save Medication' }}
+    </ion-button>
+  </div>
+
+</ion-content>
